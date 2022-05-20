@@ -1,6 +1,6 @@
-# Files
-index = 0
-while index < len(fruit):
-    letter = fruit[index]
-    print(letter)
-    index = index + 1
+text = "X-DSPAM-Confidence:0.8475 "
+a = text.find('0')
+b = text.find('a:')
+value = text[a:b]
+x=float(value)
+print(x)
