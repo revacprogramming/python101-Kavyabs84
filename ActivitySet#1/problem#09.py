@@ -1,19 +1,23 @@
 # Lists
 
-filename = "dataset/romeo.txt"
+filename = "mbox-short.txt"
+count = 0
+total = 0
 fname = input("Enter file name: ")
-fln = open(fname)
-count=0
-total=0
+try:
+	fh = open(fname)
+except:
+  	print("file is not found")
 
-for line in fln:
-    if not  line.startswith("X-DSPAM-Confidence:"):
-        continue
-    else:
-        count=count+1
-        z=line.find('0')
-        y=float(line[z:])
-        total=total+y
-asc=total/count             
-        
-print("Average spam confidence:",asc)
+for line in fh:
+	if not line.startswith("X-DSPAM-Confidence:"):
+		continue
+	else:
+		count = count+1
+		x = line.find(":")
+		y = float(line[x+1:])
+		total = total + y
+		
+avg = total/count            
+print("Average spam confidence:",avg)
+
