@@ -1,20 +1,24 @@
 # Network Programming
 # https://www.py4e.com/lessons/network
-name = input("Enter file:")
-try:
-    handle = open(name)
-except:
-
-    print("file doesn't exit")
-d =dict()
-for line in handle:
-    if not line.startswith("from"):
-        continue
-   
-        
+filename = input("Enter filename:")
+filename = "mbox-short.txt"
+handle = open(filename)
+d = dict()
 lst = list()
-for value,count in d.items():
-    lst.append(values,count)
+
+for line in handle:
+    if line.startswith("From "):
+        line=line.split()
+        line=line[5]
+        line=line[0:2]
+        d[line]=d.get(line,0)+1
+    else:
+            continue
+            
+for key,Value in  d.items():
+    lst.append((key,Value))
+
 lst.sort()
-for value,count in lst:
-    print(value,count)
+    
+for key,Value in lst[:]:
+    print(key,Value)
