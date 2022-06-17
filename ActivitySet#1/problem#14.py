@@ -1,6 +1,6 @@
 # Using Web Services
 # https://www.py4e.com/lessons/servces
-import  re
+import   re
 a=input("Enter the file name: ")
 b=open(a)
 c=re.findall("[0-9]+", b.read())
