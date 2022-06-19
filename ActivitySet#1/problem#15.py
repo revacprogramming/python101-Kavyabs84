@@ -6,5 +6,5 @@ for y in range(1,x+1):
     if(y%2==0):
         print(y)
         total=total+y
-        print("sum of even numbers",total)
+        print("sum of even numbers",total) 
 
