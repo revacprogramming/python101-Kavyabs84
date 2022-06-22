@@ -16,8 +16,5 @@ for line in fh:
 		print(words[1])
 	else:
 		continue
-                 
-
-
 
 print("There were", count, "lines in the file with From as the first word")
