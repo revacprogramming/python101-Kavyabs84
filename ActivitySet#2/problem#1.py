@@ -1,6 +1,7 @@
 
 def add(a,b):
     z=  a+b
+    
     return z
 def main():
     a = float(input("Enter the first number: "))
@@ -8,4 +9,6 @@ def main():
     c = add(a,b)
     return c
 s=main()
+
 print("sum of two given number is",s)
+
