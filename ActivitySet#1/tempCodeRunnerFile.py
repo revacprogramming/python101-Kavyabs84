@@ -6,7 +6,7 @@ fhand = open(fh)
 sum = 0
 for line in fhand:
   num = re.findall("[0-9]+",line)
-  x = len(num)
-  for i in range(x):
+  length = len(num)
+  for i in range(length):
      sum = sum + int(num[i])
 print(sum)
