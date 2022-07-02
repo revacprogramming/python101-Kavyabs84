@@ -9,4 +9,4 @@ for y in range(1,x+1):
         print("sum of even numbers",total) 
 
  
- 
+  
