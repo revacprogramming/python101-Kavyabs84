@@ -18,4 +18,4 @@ for i in range(n):
     carobject.append(car(year,company,model,speed,price))
 print("Car Details are\n")
 for obj in carobject:
-    obj.display_car_details()
+    obj.display_car_details() 
