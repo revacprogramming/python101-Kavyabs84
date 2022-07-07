@@ -1,21 +1,31 @@
-class car:
-    def __init__(self,year,company,model,speed,price):
-        self.year=year
-        self.company=company
-        self.model=model
-        self.speed=speed
-        self.price=price
-    def display_car_details(self):
-        print(self.year,"\t",self.company,"\t",self.model,"\t",self.speed,"\t",self.price)
-carobject=[]
-n=int(input("How many car details you want to enter"))
-for i in range(n):
-    year=int(input("Enter Manufacturing year\n"))
-    company=input("Enter Manufacturing Company\n")
-    model=input("Enter Model\n")
-    speed=float(input("Enter the speed\n"))
-    price=float(input("Enter the price of Car\n"))
-    carobject.append(car(year,company,model,speed,price))
-print("Car Details are\n")
-for obj in carobject:
-    obj.display_car_details() 
+from bs4 import BeautifulSoup
+import re
+from urllib.request import urlopen
+
+url=input(" Enter the Link :-  ")
+
+html_content=urlopen(url)
+
+print("\033[1m 'HTML CONTENT' \033[0m "," \n",html_content)
+soup=BeautifulSoup(html_content,"html.parser")
+print(soup.prettify())
+print(soup.title)
+
+tags=soup('span')
+print(tags)
+
+num_list=[]
+sum=0
+count=0
+for tag in tags:
+    line=str(tag)
+    number=re.findall('\d+',line)
+    num_list.append(number)
+    for num in number:
+      num=int(num)
+      count+=1
+      sum+=num
+
+print("Count:",count)
+print(len(num_list))
+print("Sum:",sum)
